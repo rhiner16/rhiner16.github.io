@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    font-size: 18px;
+    background-color: #fff;
+    padding: 20px;
+    margin: 0;
+}
+
+/* Dark theme styles */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Add dark mode styles for other elements as needed */
+.dark-mode header,
+.dark-mode nav,
+.dark-mode main,
+.dark-mode footer {
+    background-color: #222;
+    color: #ddd;
+}
+
+/* You might also need to adjust link colors for visibility */
+.dark-mode a {
+    color: #4da6ff;
+}
+
+.dark-mode a.download-link {
+    background-color: #555;
+    border-color: #777;
+}
+
+.dark-mode-toggle-container {
+    margin-left: auto; /* Already in your CSS, this pushes the button to the far right */
+}
+
+#dark-mode-toggle {
+    background: none;
+    border: none;
+    color: inherit; /* Use the inherited text color */
+    cursor: pointer;
+    padding: 10px 20px; /* Adjust the padding to match your design */
+    font-size: 1em; /* Use the inherited font size */
+}
+
+#dark-mode-toggle:hover {
+    background: #555; /* Darker background on hover for visibility */
+    color: #fff; /* Text color on hover */
+}
+
+
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+/* Modern navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+
+/* Adjusted container for general use */
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Specific styling for the About Me container */
+#about-me .container {
+    display: flex;
+    flex-direction: column; /* Stacks flex items vertically */
+    align-items: flex-start; /* Aligns items to the start of the flex container */
+    width: 100%; /* Ensures the container takes full width */
+    max-width: 960px; /* Adjust as needed for your design */
+    margin: auto; /* Centers the container */
+    padding: 20px;
+}
+
+#about-me h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem; /* Adds space below the heading */
+}
+
+#about-me p {
+    font-size: 1rem;
+    margin-bottom: 1rem; /* Adds space between paragraphs */
+    color: #666; /* Sets the paragraph text color */
+}
+
+/* Optional: Add more responsiveness to text size */
+@media (max-width: 768px) {
+    #about-me h2 {
+        font-size: 1.75rem; /* Smaller font size on smaller screens */
+    }
+
+    #about-me p {
+        font-size: 0.9rem; /* Smaller font size on smaller screens */
+    }
+}
+
+/* Base styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    padding-top: 60px; /* Add padding to the top of the body to prevent content from being hidden behind the fixed navbar */
+}
+
+/* Navigation Menu Styles */
+nav {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0; /* Adjust the padding as needed */
+    position: fixed; /* Fix position to the top of the screen */
+    top: 0; /* Align the top edge of the nav with the top of the viewport */
+    left: 0; /* Align the left edge of the nav with the left of the viewport */
+    right: 0; /* Align the right edge of the nav with the right of the viewport */
+    z-index: 1000; /* Ensure nav stays on top of other elements */
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centers the menu items horizontally */
+}
+
+.nav-menu li {
+    padding: 0 20px; /* Space out the menu items */
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.nav-menu a:hover,
+.nav-menu a:focus {
+    color: #04c; /* Change color when hovering or focusing on menu items */
+}
+
+
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+    }
+
+    .nav-menu li {
+        padding: 10px 0; /* Larger padding for vertical layout */
+    }
+}
