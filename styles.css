@@ -1,187 +1,217 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap');
 
 body {
     font-family: 'Roboto', sans-serif;
-    color: #333;
     line-height: 1.6;
-    font-size: 18px;
-    background-color: #fff;
-    padding: 20px;
     margin: 0;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    color: #333; /* Default text color */
+    background-color: #fff; /* Default background color */
 }
 
-/* Dark theme styles */
-body.dark-mode {
+body1 {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    color: #333; /* Default text color */
+    background-color: #fff; /* Default background color */
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #000000; /* A modern blue shade */
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    display: inline-block; /* To enable the use of padding and margin */
+    margin: 10px 0; /* Provides space around the button */
+  }
+  
+  .btn:hover, .btn:focus {
+    background-color: #373535; /* A darker shade of blue on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+    color: #ffffff;
+    text-decoration: none; /* Ensures no underline on hover */
+  }
+  
+  .btn:active {
+    background-color: #505054; /* Even darker shade of blue when active/clicked */
+    transform: translateY(1px); /* Pushes the button down a bit when clicked */
+  }
+  
+nav body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
     background-color: #333;
-    color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
 }
 
-/* Add dark mode styles for other elements as needed */
-.dark-mode header,
-.dark-mode nav,
-.dark-mode main,
-.dark-mode footer {
-    background-color: #222;
-    color: #ddd;
-}
-
-/* You might also need to adjust link colors for visibility */
-.dark-mode a {
-    color: #4da6ff;
-}
-
-.dark-mode a.download-link {
-    background-color: #555;
-    border-color: #777;
-}
-
-.dark-mode-toggle-container {
-    margin-left: auto; /* Already in your CSS, this pushes the button to the far right */
-}
-
-#dark-mode-toggle {
-    background: none;
-    border: none;
-    color: inherit; /* Use the inherited text color */
-    cursor: pointer;
-    padding: 10px 20px; /* Adjust the padding to match your design */
-    font-size: 1em; /* Use the inherited font size */
-}
-
-#dark-mode-toggle:hover {
-    background: #555; /* Darker background on hover for visibility */
-    color: #fff; /* Text color on hover */
-}
-
-
-h1, h2, h3 {
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-h1 {
-    font-size: 2.5rem;
-}
-
-h2 {
-    font-size: 2rem;
-}
-
-h3 {
-    font-size: 1.75rem;
-}
-
-/* Modern navigation */
-nav {
+#navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    background-color: #333;
-    color: #fff;
+    padding: 0 20px;
 }
 
-nav a {
+.nav-brand {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-item {
+    margin-left: 20px;
     color: #fff;
     text-decoration: none;
-    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
+.nav-item:hover {
+    color: #04c;
+}
 
-/* Adjusted container for general use */
+.nav-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+.nav-toggle .hamburger {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #fff;
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+.nav-toggle .hamburger::after,
+.nav-toggle .hamburger::before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background: #fff;
+    transition: transform 0.3s ease;
+}
+
+.nav-toggle .hamburger::before {
+    transform: translateY(-8px);
+}
+
+.nav-toggle .hamburger::after {
+    transform: translateY(6px);
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        flex-direction: column;
+        background-color: #333;
+        width: 100%;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-item {
+        padding: 15px 20px;
+        margin: 0;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-links.show {
+        transform: translateY(0);
+    }
+}
+.photo {
+    flex-basis: 50%;
+}
+
+.photo img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
 .container {
     display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+    height: 100%;
 }
 
-/* Specific styling for the About Me container */
-#about-me .container {
+
+.profile-image-container {
+    width: auto; /* Adjust size as needed */
+    height: auto;
+    background-color:  #f4f4f4; /* Background color for the image container */
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+
+.left-column, .right-column {
+    width: 50%;
     display: flex;
-    flex-direction: column; /* Stacks flex items vertically */
-    align-items: flex-start; /* Aligns items to the start of the flex container */
-    width: 100%; /* Ensures the container takes full width */
-    max-width: 960px; /* Adjust as needed for your design */
-    margin: auto; /* Centers the container */
-    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-#about-me h2 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 1rem; /* Adds space below the heading */
+.left-column {
+    text-align: left;
 }
 
-#about-me p {
-    font-size: 1rem;
-    margin-bottom: 1rem; /* Adds space between paragraphs */
-    color: #666; /* Sets the paragraph text color */
-}
-
-/* Optional: Add more responsiveness to text size */
-@media (max-width: 768px) {
-    #about-me h2 {
-        font-size: 1.75rem; /* Smaller font size on smaller screens */
-    }
-
-    #about-me p {
-        font-size: 0.9rem; /* Smaller font size on smaller screens */
-    }
-}
-
-/* Base styles */
-body {
-    font-family: 'Roboto', sans-serif;
-    padding-top: 60px; /* Add padding to the top of the body to prevent content from being hidden behind the fixed navbar */
-}
-
-/* Navigation Menu Styles */
-nav {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0; /* Adjust the padding as needed */
-    position: fixed; /* Fix position to the top of the screen */
-    top: 0; /* Align the top edge of the nav with the top of the viewport */
-    left: 0; /* Align the left edge of the nav with the left of the viewport */
-    right: 0; /* Align the right edge of the nav with the right of the viewport */
-    z-index: 1000; /* Ensure nav stays on top of other elements */
-}
-
-.nav-menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center; /* Centers the menu items horizontally */
-}
-
-.nav-menu li {
-    padding: 0 20px; /* Space out the menu items */
-}
-
-.nav-menu a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 700;
-    transition: color 0.3s ease; /* Smooth transition for hover effect */
-}
-
-.nav-menu a:hover,
-.nav-menu a:focus {
-    color: #04c; /* Change color when hovering or focusing on menu items */
+.right-column {
+    background-color: #f4f4f4; /* Example background color */
 }
 
 
-
-/* Responsive design adjustments */
-@media (max-width: 768px) {
-    .nav-menu {
-        flex-direction: column;
-    }
-
-    .nav-menu li {
-        padding: 10px 0; /* Larger padding for vertical layout */
-    }
+.title{
+    font-family: "Helvetica","sans-serif";
+    text-align: left;
+    font-size: 3em;
+    line-height: 1; /* Reduced line height */
+    margin-top: 0; /* No top margin */
+    margin-bottom: 0.2em;
 }
+
+.title1 {
+    
+    font-size: 2em;
+    line-height: 1; /* Reduced line height */
+    margin-top: 0; /* No top margin */
+    margin-bottom: 0.6em; /* Minimal bottom margin */
+}
+
+.contact-info {
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
