@@ -23,14 +23,42 @@
 </header>
 
 <body1>
-
-    <div id="resume" class="section">
-        <h2>Portfolio</h2>
-        <p>Here's some of the projects I've worked on...</p>
-        <!-- Resume content goes here -->
+   
+    <div class="project-box">
+        <div class="slideshow-container" id="slideshow1">
+            <!-- Slides for Project 1 -->
+            <div class="mySlides fade">
+                <img src="closet bates.jpg" style="width:100%">
+            </div>
+            <!-- More slides -->
+            <!-- Next and previous buttons, passing the unique ID -->
+            <a class="prev" onclick="plusSlides(-1, 'slideshow1')">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 'slideshow1')">&#10095;</a>
+        </div>
+        <div class="project-description">
+            <p>This project is about...</p>
+            <a href="project_download_link.zip" class="btn">Download Project</a>
+        </div>
     </div>
 
-    <!-- Footer or additional content can go here -->
+    <div class="project-box">
+        <div class="slideshow-container" id="slideshow2">
+            <!-- Slides for Project 1 -->
+            <div class="mySlides fade">
+                <img src="compsci background.jpg" style="width:100%">
+            </div>
+            <!-- More slides -->
+            <!-- Next and previous buttons, passing the unique ID -->
+            <a class="prev" onclick="plusSlides(-1, 'slideshow1')">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 'slideshow1')">&#10095;</a>
+        </div>
+        <div class="project-description">
+            <p>This project is about...</p>
+            <a href="project_download_link.zip" class="btn">Download Project</a>
+        </div>
+    </div>
+
+
     <script src="script.js"></script>
 
 </body1>
