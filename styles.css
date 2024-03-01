@@ -4,7 +4,7 @@ body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     margin: 0;
-    padding: 0px;
+    padding: 0;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -36,20 +36,20 @@ body1 {
     display: inline-block; /* To enable the use of padding and margin */
     margin: 10px 0; /* Provides space around the button */
     max-width: 200px;
-  }
-  
-  .btn:hover, .btn:focus {
+}
+
+.btn:hover, .btn:focus {
     background-color: #373535; /* A darker shade of blue on hover */
     transform: translateY(-2px); /* Slight lift effect on hover */
     color: #ffffff;
     text-decoration: none; /* Ensures no underline on hover */
-  }
-  
-  .btn:active {
+}
+
+.btn:active {
     background-color: #505054; /* Even darker shade of blue when active/clicked */
     transform: translateY(1px); /* Pushes the button down a bit when clicked */
-  }
-  
+}
+
 nav body{
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -152,6 +152,7 @@ header {
         transform: translateY(0);
     }
 }
+
 .photo {
     flex-basis: 50%;
 }
@@ -167,15 +168,13 @@ header {
     height: 100%;
 }
 
-
 .profile-image-container {
     width: auto; /* Adjust size as needed */
     height: auto;
-    background-color:  #f4f4f4; /* Background color for the image container */
+    background-color: #f4f4f4; /* Background color for the image container */
     border-radius: 100%;
     overflow: hidden;
 }
-
 
 .left-column, .right-column {
     width: 50%;
@@ -193,7 +192,6 @@ header {
     background-color: #f4f4f4; /* Example background color */
 }
 
-
 .title{
     font-family: "Helvetica","sans-serif";
     text-align: left;
@@ -204,7 +202,6 @@ header {
 }
 
 .title1 {
-    
     font-size: 2em;
     line-height: 1; /* Reduced line height */
     margin-top: 0; /* No top margin */
@@ -215,7 +212,6 @@ header {
     font-size: 0.9em;
     line-height: 1.6;
 }
-
 
 .profile-content {
     background: #fff;
@@ -241,11 +237,6 @@ header {
     display: none;
 }
 
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
 .prev, .next {
     cursor: pointer;
     position: absolute;
@@ -259,6 +250,14 @@ header {
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
+    opacity: 0; /* Make arrows invisible by default */
+    visibility: hidden; /* Hide arrows by default */
+}
+
+.slideshow-container:hover .prev,
+.slideshow-container:hover .next {
+    opacity: 1; /* Make arrows visible on hover */
+    visibility: visible; /* Make arrows visible on hover */
 }
 
 .next {
@@ -268,11 +267,6 @@ header {
 
 .prev:hover, .next:hover {
     background-color: rgba(0,0,0,0.8);
-}
-
-@keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
 }
 
 .project-description p {
