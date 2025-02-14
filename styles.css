@@ -192,8 +192,28 @@ header {
     background-color: #f4f4f4; /* Example background color */
 }
 
+/* The current desktop layout for the profile image is handled by its container.
+   If it appears perfect on desktop but isn't scaling on mobile, we'll add a media query. */
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+    .left-column, .right-column {
+        width: 100%;
+    }
+    .profile-image-container {
+        width: 50vw;  /* Adjusted width for mobile */
+        height: 50vw; /* Keep the circular shape */
+        max-width: none;
+        max-height: none;
+        margin: 20px auto; /* Center horizontally with some margin */
+    }
+}
+
 .title{
-    font-family: "Helvetica","sans-serif";
+    font-family: "Helvetica", sans-serif;
     text-align: left;
     font-size: 3em;
     line-height: 1; /* Reduced line height */
@@ -267,4 +287,3 @@ header {
 .prev:hover, .next:hover {
     background-color: rgba(0,0,0,1); 
 }
-
